@@ -5,6 +5,7 @@ import 'package:ticket_app/screens/hotel.dart';
 import 'package:ticket_app/screens/ticket_view.dart';
 import 'package:ticket_app/utils/info_list.dart';
 import 'package:ticket_app/utils/styles.dart';
+import 'package:ticket_app/widgets/double_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -71,20 +72,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const Gap(40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Upcoming Flights", style: Styles.headLineStyle2),
-                  InkWell(
-                    onTap: () {
-                      print("View all");
-                    },
-                    child: Text("View all",
-                        style: Styles.textStyle
-                            .copyWith(color: Styles.primaryColor)),
-                  ),
-                ],
-              )
+              const DoubleText(
+                  bigText: "Upcoming Flights", smallText: "View all")
             ],
           ),
         ),
@@ -100,20 +89,7 @@ class HomeScreen extends StatelessWidget {
         const Gap(15),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Hotels", style: Styles.headLineStyle2),
-              InkWell(
-                onTap: () {
-                  print("View all");
-                },
-                child: Text("View all",
-                    style:
-                        Styles.textStyle.copyWith(color: Styles.primaryColor)),
-              ),
-            ],
-          ),
+          child: const DoubleText(bigText: "Hotels", smallText: "View all"),
         ),
         const Gap(15),
         SingleChildScrollView(
